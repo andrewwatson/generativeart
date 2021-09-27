@@ -7,9 +7,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/jdxyw/generativeart"
-	"github.com/jdxyw/generativeart/arts"
-	"github.com/jdxyw/generativeart/common"
+	"github.com/andrewwatson/generativeart"
+	"github.com/andrewwatson/generativeart/arts"
+	"github.com/andrewwatson/generativeart/common"
 )
 
 func main() {

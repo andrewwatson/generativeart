@@ -2,10 +2,11 @@ package arts
 
 import (
 	"fmt"
-	"github.com/jdxyw/generativeart"
-	"github.com/jdxyw/generativeart/common"
 	"image/color"
 	"log"
+
+	"github.com/andrewwatson/generativeart"
+	"github.com/andrewwatson/generativeart/common"
 )
 
 // ColorMapping maps some parameters to color space.

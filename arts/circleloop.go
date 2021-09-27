@@ -1,9 +1,10 @@
 package arts
 
 import (
-	"github.com/fogleman/gg"
-	"github.com/jdxyw/generativeart"
 	"math"
+
+	"github.com/andrewwatson/generativeart"
+	"github.com/fogleman/gg"
 )
 
 type circleLoop struct {

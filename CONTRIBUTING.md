@@ -8,7 +8,7 @@ If you contribute anything, please add the necessary documentations.
 
 ## Example
 
-If you add new art, please add a new example under the folder `example`. And write the necessay documentation under the folder [docs](https://github.com/jdxyw/generativeart/tree/master/docs) and the [README.md](https://github.com/jdxyw/generativeart/blob/master/README.md).
+If you add new art, please add a new example under the folder `example`. And write the necessay documentation under the folder [docs](https://github.com/andrewwatson/generativeart/tree/master/docs) and the [README.md](https://github.com/andrewwatson/generativeart/blob/master/README.md).
 
 ## Code
 

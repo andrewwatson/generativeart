@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/jdxyw/generativeart"
-	"github.com/jdxyw/generativeart/arts"
-	"github.com/jdxyw/generativeart/common"
 	"math/rand"
 	"time"
+
+	"github.com/andrewwatson/generativeart"
+	"github.com/andrewwatson/generativeart/arts"
+	"github.com/andrewwatson/generativeart/common"
 )
 
 func julia1(z complex128) complex128 {

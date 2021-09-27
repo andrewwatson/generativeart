@@ -1,8 +1,9 @@
 package arts
 
 import (
-	"github.com/jdxyw/generativeart"
 	"math/rand"
+
+	"github.com/andrewwatson/generativeart"
 
 	"github.com/fogleman/gg"
 )

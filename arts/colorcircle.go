@@ -1,11 +1,12 @@
 package arts
 
 import (
-	"github.com/fogleman/gg"
-	"github.com/jdxyw/generativeart"
-	"github.com/jdxyw/generativeart/common"
 	"math"
 	"math/rand"
+
+	"github.com/andrewwatson/generativeart"
+	"github.com/andrewwatson/generativeart/common"
+	"github.com/fogleman/gg"
 )
 
 type colorCircle struct {

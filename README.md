@@ -1,8 +1,8 @@
 # generativeart
 
-[![Go](https://github.com/jdxyw/generativeart/actions/workflows/go.yml/badge.svg)](https://github.com/jdxyw/generativeart/actions/workflows/go.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/jdxyw/generativeart)](https://goreportcard.com/report/github.com/jdxyw/generativeart)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/jdxyw/generativeart/master/LICENSE)
+[![Go](https://github.com/andrewwatson/generativeart/actions/workflows/go.yml/badge.svg)](https://github.com/andrewwatson/generativeart/actions/workflows/go.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/andrewwatson/generativeart)](https://goreportcard.com/report/github.com/andrewwatson/generativeart)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/andrewwatson/generativeart/master/LICENSE)
 
 `generativeart` is a `Go` package to generate many kinds of generative art. The goal is to collect some excellent generative art (implemented in `R` or `Processing`), and rewrite them in `Go` again. I would paste the original link at the end of this README(If I remember, you can also submit a PR if you found I missed something.). Currently, it supports the following type.
 
@@ -45,11 +45,11 @@
 
 ## Buy me a coffee
 
-If you found this package is useful, maybe you could buy me a coffee from [Paypal](https://www.paypal.me/jdxyw).
+If you found this package is useful, maybe you could buy me a coffee from [Paypal](https://www.paypal.me/andrewwatson).
 
 ## Contributing
 
-I am glad to see someone to contribute to this repo, please follow the [CONTRIBUTING.md](https://github.com/jdxyw/generativeart/blob/master/CONTRIBUTING.md) for more information. Or you can just open an issue or PR.
+I am glad to see someone to contribute to this repo, please follow the [CONTRIBUTING.md](https://github.com/andrewwatson/generativeart/blob/master/CONTRIBUTING.md) for more information. Or you can just open an issue or PR.
 
 ## Types supported
 
@@ -93,7 +93,7 @@ For these kinds of art, the package provides as many parameters to control the a
 The go version I used is `Go 1.16`.
 
 ```bash
-go get github.com/jdxyw/generativeart
+go get github.com/andrewwatson/generativeart
 ```
 
 ## Art Type

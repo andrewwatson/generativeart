@@ -1,9 +1,9 @@
 package arts
 
 import (
+	"github.com/andrewwatson/generativeart"
+	"github.com/andrewwatson/generativeart/common"
 	"github.com/fogleman/gg"
-	"github.com/jdxyw/generativeart"
-	"github.com/jdxyw/generativeart/common"
 )
 
 type yarn struct {

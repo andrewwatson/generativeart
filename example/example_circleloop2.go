@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/jdxyw/generativeart"
-	"github.com/jdxyw/generativeart/arts"
 	"image/color"
 	"math/rand"
 	"time"
+
+	"github.com/andrewwatson/generativeart"
+	"github.com/andrewwatson/generativeart/arts"
 )
 
 func main() {

@@ -1,8 +1,9 @@
 package arts
 
 import (
-	"github.com/jdxyw/generativeart"
 	"math/cmplx"
+
+	"github.com/andrewwatson/generativeart"
 )
 
 // GenFunc defines a func type used by julia set.

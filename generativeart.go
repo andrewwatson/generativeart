@@ -9,7 +9,7 @@ import (
 	"image/png"
 	"os"
 
-	"github.com/jdxyw/generativeart/common"
+	"github.com/andrewwatson/generativeart/common"
 )
 
 type Engine interface {

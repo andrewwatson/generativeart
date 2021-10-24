@@ -11,7 +11,7 @@ const (
 	perlinZwrapb     = 8
 	perlinZwrap      = 1 << perlinZwrapb
 	perlinSize       = 4095
-	perlinOctaves    = 4
+	perlinOctaves    = 5
 	perlinAmpFalloff = 0.5
 )
 

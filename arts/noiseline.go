@@ -10,13 +10,15 @@ import (
 )
 
 type noiseLine struct {
-	n int
+	n       int
+	elipses bool
 }
 
 // NewNoiseLine returns a noiseLine object.
-func NewNoiseLine(n int) *noiseLine {
+func NewNoiseLine(n int, elipses bool) *noiseLine {
 	return &noiseLine{
-		n: n,
+		n:       n,
+		elipses: elipses,
 	}
 }
 
@@ -26,14 +28,16 @@ func (nl *noiseLine) Generative(c *generativeart.Canva) {
 	noise := common.NewPerlinNoise()
 
 	ctex.SetColor(common.Black)
-	for i := 0; i < 80; i++ {
-		x := rand.Float64() * float64(c.Width())
-		y := rand.Float64() * float64(c.Height())
+	if nl.elipses {
+		for i := 0; i < 80; i++ {
+			x := rand.Float64() * float64(c.Width())
+			y := rand.Float64() * float64(c.Height())
 
-		s := rand.Float64() * float64(c.Width()) / 8
-		ctex.SetLineWidth(0.5)
-		ctex.DrawEllipse(x, y, s, s)
-		ctex.Stroke()
+			s := rand.Float64() * float64(c.Width()) / 8
+			ctex.SetLineWidth(0.5)
+			ctex.DrawEllipse(x, y, s, s)
+			ctex.Stroke()
+		}
 	}
 
 	t := rand.Float64() * 10

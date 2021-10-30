@@ -1,7 +1,6 @@
 package arts
 
 import (
-	"fmt"
 	"math"
 	"math/rand"
 
@@ -58,7 +57,9 @@ func (swc *sinwavecircles) draw(ctex *gg.Context, c *generativeart.Canva, x floa
 
 	noise := swc.noise.Noise3D(x*0.02+123.234, (1-x)*0.02, 345.4123)
 	noise = math.Pow(noise, 0.5)
-	a2 := common.Remap(noise, 0.15, 0.85, 1.0, 16.0)
+	amplitudeModulation := common.Remap(noise, 0.15, 0.85, 1.0, 20.0)
+
+	radiusModulation := common.Remap(noise, 0.15, 0.85, 0.25, 1.25)
 
 	for i := startingX; i < endingX; i += swc.spacing {
 
@@ -72,16 +73,16 @@ func (swc *sinwavecircles) draw(ctex *gg.Context, c *generativeart.Canva, x floa
 
 		radianX := gg.Radians(i * 0.25)
 		SinX := math.Sin(radianX) * swc.amplitude
-		r := math.Pow(rand.Float64(), 2) * 100
+		r := math.Pow(rand.Float64(), 2) * 100 * radiusModulation
 
-		fmt.Printf("X: %0.4f Rx: %0.4f Sin: %0.4f radius: %0.4f\n", i, radianX, SinX, r)
+		// fmt.Printf("X: %0.4f Rx: %0.4f Sin: %0.4f radius: %0.4f\n", i, radianX, SinX, r)
 
 		cls := c.Opts().ColorSchema()[rand.Intn(len(c.Opts().ColorSchema()))]
 		ctex.SetColor(cls)
 
 		// inflationFactor := rand.Float64() * 25
 		// yValue :=
-		ctex.DrawCircle(i, midpointY+SinX*a2, r)
+		ctex.DrawCircle(i, midpointY+SinX*amplitudeModulation, r)
 		ctex.Stroke()
 
 	}

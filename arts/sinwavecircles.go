@@ -10,19 +10,21 @@ import (
 )
 
 type sinwavecircles struct {
-	amplitude float64
-	spacing   float64
-	noise     *common.PerlinNoise
-	depth     int
+	amplitude  float64
+	spacing    float64
+	noise      *common.PerlinNoise
+	depth      int
+	wavelength float64
 }
 
 // NewBlackHole returns a blackhole object.
-func NewSinWaveCircles(amplitude int, spacing int, depth int) *sinwavecircles {
+func NewSinWaveCircles(amplitude int, wavelength float64, spacing int, depth int) *sinwavecircles {
 	return &sinwavecircles{
-		amplitude: float64(amplitude),
-		spacing:   float64(spacing),
-		noise:     common.NewPerlinNoise(),
-		depth:     depth,
+		amplitude:  float64(amplitude),
+		spacing:    float64(spacing),
+		noise:      common.NewPerlinNoise(),
+		depth:      depth,
+		wavelength: wavelength,
 	}
 }
 
@@ -71,7 +73,7 @@ func (swc *sinwavecircles) draw(ctex *gg.Context, c *generativeart.Canva, x floa
 		}
 		ctex.SetLineWidth(lw)
 
-		radianX := gg.Radians(i * 0.25)
+		radianX := gg.Radians(i * swc.wavelength)
 		SinX := math.Sin(radianX) * swc.amplitude
 		r := math.Pow(rand.Float64(), 2) * 100 * radiusModulation
 

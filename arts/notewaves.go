@@ -19,6 +19,9 @@ const (
 	maxRadius        = 60
 	defaultSpacing   = 40.0
 	defaultAmplitude = 50.0
+
+	minLineWidth = 3.0
+	maxLineWidth = 10.0
 )
 
 type notewave struct {
@@ -60,10 +63,10 @@ func (nw *notewave) Generative(c *generativeart.Canva) {
 	for i := startingX; i < endingX; i += nw.spacing {
 
 		var lw float64
-		if rand.Float64() < 0.8 {
-			lw = 1.2
+		if rand.Float64() < 0.6 {
+			lw = minLineWidth
 		} else {
-			lw = common.RandomRangeFloat64(5.0, common.RandomRangeFloat64(5, 9))
+			lw = common.RandomRangeFloat64(minLineWidth, common.RandomRangeFloat64(minLineWidth, maxLineWidth))
 		}
 		ctex.SetLineWidth(lw)
 

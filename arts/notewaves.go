@@ -16,8 +16,8 @@ import (
 
 const (
 	minRadius        = 10
-	maxRadius        = 60
-	defaultSpacing   = 40.0
+	maxRadius        = 30
+	defaultSpacing   = 30.0
 	defaultAmplitude = 50.0
 
 	minLineWidth = 3.0
@@ -70,7 +70,7 @@ func (nw *notewave) Generative(c *generativeart.Canva) {
 		}
 		ctex.SetLineWidth(lw)
 
-		radianX := gg.Radians(i*wavelength) / 150
+		radianX := gg.Radians(i*wavelength) / 80
 		SinX := math.Sin(radianX)
 		amplitude := SinX * nw.amplitude
 

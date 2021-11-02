@@ -38,13 +38,13 @@ func main() {
 	// wavelength := 1.0
 
 	// F4 349.23Hz 98.79cm
-	c.Draw(arts.NewNoteWave(float64(size)*0.25, "C4"))
+	c.Draw(arts.NewNoteWave(float64(size)*0.25, "F4"))
 
 	// // A4 440Hz 78.41cm
-	c.Draw(arts.NewNoteWave(float64(size)*0.5, "E4"))
+	c.Draw(arts.NewNoteWave(float64(size)*0.5, "A4"))
 
 	// // C5 523.25Hz 65.93cm
-	c.Draw(arts.NewNoteWave(float64(size)*0.75, "G5"))
+	c.Draw(arts.NewNoteWave(float64(size)*0.75, "C5"))
 
 	// c.Draw(arts.NewSinWaveCircles(amplitude, wavelength, spacing, depth))
 	fileID := "a8c5e8d7-f100-4d8a-871a-bc5c1a8cf037"

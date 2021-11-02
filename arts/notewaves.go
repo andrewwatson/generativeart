@@ -54,7 +54,7 @@ func (nw *notewave) Generative(c *generativeart.Canva) {
 	if err != nil {
 		fmt.Printf("ERR: %s\n", err.Error())
 	}
-	fmt.Printf("Note: %s Wavelength: %0.6f\n", nw.noteName, wavelength)
+	fmt.Printf("%s Wavelength: %0.6f\n", nw.noteName, wavelength)
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	startingX := float64(c.Width()) * 0.05
@@ -81,8 +81,6 @@ func (nw *notewave) Generative(c *generativeart.Canva) {
 		// fmt.Printf("Drawing Circle: i %0.02f radians %0.02f amp %0.02f sin %0.02f rad %0.02f\n", i, radianX, amplitude, SinX, nw.radius)
 		ctex.DrawCircle(i, nw.startingY+(amplitude), radius)
 		ctex.Stroke()
-
-		ctex.DrawString("NoteWave", 10.0, 10.0)
 	}
 }
 

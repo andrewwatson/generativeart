@@ -15,8 +15,8 @@ import (
 )
 
 const (
-	minRadius        = 10
-	maxRadius        = 30
+	// minRadius        = 10
+	// maxRadius        = 30
 	defaultSpacing   = 30.0
 	defaultAmplitude = 50.0
 
@@ -32,10 +32,12 @@ type notewave struct {
 	amplitude  float64
 	lines      bool
 	noteName   string
+	minRadius  float64
+	maxRadius  float64
 }
 
 // wavelengths can be obtained at https://pages.mtu.edu/~suits/notefreqs.html
-func NewNoteWave(startingY float64, noteName string) *notewave {
+func NewNoteWave(startingY float64, noteName string, minRadius, maxRadius float64) *notewave {
 
 	return &notewave{
 		startingY: startingY,
@@ -45,6 +47,8 @@ func NewNoteWave(startingY float64, noteName string) *notewave {
 		amplitude: defaultAmplitude,
 		lines:     false,
 		noteName:  noteName,
+		minRadius: minRadius,
+		maxRadius: maxRadius,
 	}
 
 }
@@ -77,7 +81,7 @@ func (nw *notewave) Generative(c *generativeart.Canva) {
 		cls := c.Opts().ColorSchema()[rand.Intn(len(c.Opts().ColorSchema()))]
 		ctex.SetColor(cls)
 
-		radius := common.RandomRangeFloat64(minRadius, maxRadius)
+		radius := common.RandomRangeFloat64(nw.minRadius, nw.maxRadius)
 		// fmt.Printf("Drawing Circle: i %0.02f radians %0.02f amp %0.02f sin %0.02f rad %0.02f\n", i, radianX, amplitude, SinX, nw.radius)
 		ctex.DrawCircle(i, nw.startingY+(amplitude), radius)
 		ctex.Stroke()

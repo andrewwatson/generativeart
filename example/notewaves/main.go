@@ -11,6 +11,11 @@ import (
 	"github.com/andrewwatson/generativeart/common"
 )
 
+const (
+	minRadius = 10
+	maxRadius = 50
+)
+
 func main() {
 
 	colors := []color.RGBA{
@@ -38,13 +43,13 @@ func main() {
 	// wavelength := 1.0
 
 	// F4 349.23Hz 98.79cm
-	c.Draw(arts.NewNoteWave(float64(size)*0.25, "F4"))
+	c.Draw(arts.NewNoteWave(float64(size)*0.25, "F4", minRadius, maxRadius))
 
 	// // A4 440Hz 78.41cm
-	c.Draw(arts.NewNoteWave(float64(size)*0.5, "A4"))
+	c.Draw(arts.NewNoteWave(float64(size)*0.5, "A4", minRadius, maxRadius))
 
 	// // C5 523.25Hz 65.93cm
-	c.Draw(arts.NewNoteWave(float64(size)*0.75, "C5"))
+	c.Draw(arts.NewNoteWave(float64(size)*0.75, "C5", minRadius, maxRadius))
 
 	// c.Draw(arts.NewSinWaveCircles(amplitude, wavelength, spacing, depth))
 	fileID := "a8c5e8d7-f100-4d8a-871a-bc5c1a8cf037"

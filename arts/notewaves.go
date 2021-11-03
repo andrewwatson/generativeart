@@ -54,7 +54,7 @@ func NewNoteWave(startingY float64, noteName string, minRadius, maxRadius float6
 }
 func (nw *notewave) Generative(c *generativeart.Canva) {
 
-	wavelength, err := nw.getWavelength(nw.noteName)
+	wavelength, err := nw.GetWavelength(nw.noteName)
 	if err != nil {
 		fmt.Printf("ERR: %s\n", err.Error())
 	}
@@ -84,11 +84,12 @@ func (nw *notewave) Generative(c *generativeart.Canva) {
 		radius := common.RandomRangeFloat64(nw.minRadius, nw.maxRadius)
 		// fmt.Printf("Drawing Circle: i %0.02f radians %0.02f amp %0.02f sin %0.02f rad %0.02f\n", i, radianX, amplitude, SinX, nw.radius)
 		ctex.DrawCircle(i, nw.startingY+(amplitude), radius)
+		// ctex.DrawEllipse(i, nw.startingY+(amplitude))
 		ctex.Stroke()
 	}
 }
 
-func (nw *notewave) getWavelength(noteName string) (float64, error) {
+func (nw *notewave) GetWavelength(noteName string) (float64, error) {
 
 	r := csv.NewReader(strings.NewReader(frequencyTable))
 

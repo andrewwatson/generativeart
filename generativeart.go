@@ -5,11 +5,13 @@ import (
 	"image"
 	"image/color"
 	"image/draw"
+	"image/gif"
 	"image/jpeg"
 	"image/png"
 	"os"
 
 	"github.com/andrewwatson/generativeart/common"
+	"github.com/andybons/gogif"
 )
 
 type Engine interface {
@@ -20,6 +22,7 @@ type Canva struct {
 	height, width int
 	img           *image.RGBA
 	opts          Options
+	frames        []*image.RGBA
 }
 
 func (c *Canva) Opts() Options {
@@ -92,6 +95,7 @@ func NewCanva(w, h int) *Canva {
 			nIters:      20,
 			alpha:       255,
 		},
+		frames: make([]*image.RGBA, 0),
 	}
 }
 
@@ -138,6 +142,66 @@ func (c *Canva) DrawTimelapse(e Engine) {
 // FillBackground fills the background of the Canva.
 func (c *Canva) FillBackground() {
 	draw.Draw(c.Img(), c.Img().Bounds(), &image.Uniform{c.Opts().Background()}, image.ZP, draw.Src)
+}
+
+func (c *Canva) AddFrame(img *image.RGBA) {
+
+	c.frames = append(c.frames, img)
+}
+
+func (c *Canva) GetLastFrame() *image.RGBA {
+	if len(c.frames) > 0 {
+		return c.frames[len(c.frames)-1]
+	}
+
+	return c.Img()
+}
+
+func (c *Canva) ToAnimatedGIF(fpath string, frameRate int) error {
+
+	outGif := &gif.GIF{}
+
+	quantizer := gogif.MedianCutQuantizer{NumColor: 64}
+
+	for _, simage := range c.frames {
+		bounds := simage.Bounds()
+		palettedImage := image.NewPaletted(bounds, nil)
+
+		quantizer.Quantize(palettedImage, bounds, simage, image.ZP)
+
+		// Add new frame to animated GIF
+		outGif.Image = append(outGif.Image, palettedImage)
+		outGif.Delay = append(outGif.Delay, frameRate)
+	}
+
+	f, err := os.Create(fpath)
+	if err != nil {
+		return err
+	}
+	outGif.LoopCount = -1
+	gif.EncodeAll(f, outGif)
+
+	return nil
+}
+
+func (c *Canva) ToGIF(fpath string) error {
+
+	f, err := os.Create(fpath)
+	if err != nil {
+		return err
+	}
+	if err = gif.Encode(f, c.Img(), &gif.Options{
+		NumColors: 256,
+	}); err != nil {
+		f.Close()
+		return err
+	}
+
+	if err = f.Close(); err != nil {
+		return err
+	}
+
+	return nil
 }
 
 // ToPng saves the image to local with PNG format.

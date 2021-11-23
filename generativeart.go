@@ -131,8 +131,8 @@ func (c *Canva) SetAlpha(alpha int) {
 	c.opts.alpha = alpha
 }
 
-func (c *Canva) Draw(e Engine) {
-	e.Generative(c)
+func (c *Canva) Draw(e Engine) string {
+	return e.Generative(c)
 }
 
 func (c *Canva) DrawTimelapse(e Engine) {

@@ -57,7 +57,7 @@ func (s *spiralSquare) Generative(c *generativeart.Canva) string {
 		sl = sl - s.decay*s.rectSide
 
 		if sl < 0 {
-			return
+			return ""
 		}
 	}
 

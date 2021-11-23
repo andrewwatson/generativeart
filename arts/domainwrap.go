@@ -50,7 +50,7 @@ func (d *domainWrap) SetDynamicParameter(xstep, ystep float64, n int, path strin
 func (d *domainWrap) Generative(c *generativeart.Canva) string {
 	if d.numImages == 0 && len(d.imgPath) == 0 {
 		d.generative(c)
-		return
+		return ""
 	}
 
 	if d.numImages > 0 && len(d.imgPath) == 0 {

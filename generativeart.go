@@ -157,7 +157,7 @@ func (c *Canva) GetLastFrame() *image.RGBA {
 	return c.Img()
 }
 
-func (c *Canva) ToAnimatedGIF(fpath string, frameRate int) error {
+func (c *Canva) ToAnimatedGIF(fpath string, frameRate, loopCount int) error {
 
 	outGif := &gif.GIF{}
 
@@ -178,7 +178,7 @@ func (c *Canva) ToAnimatedGIF(fpath string, frameRate int) error {
 	if err != nil {
 		return err
 	}
-	outGif.LoopCount = -1
+	outGif.LoopCount = loopCount
 	gif.EncodeAll(f, outGif)
 
 	return nil

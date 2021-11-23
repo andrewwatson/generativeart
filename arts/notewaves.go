@@ -18,7 +18,7 @@ const (
 	// minRadius        = 10
 	// maxRadius        = 30
 	defaultSpacing   = 30.0
-	defaultAmplitude = 100.0
+	defaultAmplitude = 40.0
 
 	minLineWidth = 3.0
 	maxLineWidth = 10.0

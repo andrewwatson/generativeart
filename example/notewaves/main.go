@@ -13,7 +13,7 @@ import (
 
 const (
 	minRadius = 10
-	maxRadius = 50
+	maxRadius = 30
 )
 
 func main() {
@@ -34,13 +34,6 @@ func main() {
 
 	c.SetBackground(common.Black)
 	c.FillBackground()
-
-	// showLines := true
-	// amplitude := 12
-	// spacing := 2
-	// depth := 2
-
-	// wavelength := 1.0
 
 	// F4 349.23Hz 98.79cm
 	c.Draw(arts.NewNoteWave(float64(size)*0.25, "F4", minRadius, maxRadius))

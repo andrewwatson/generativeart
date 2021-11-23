@@ -78,7 +78,7 @@ func (cl *circleLoop2) draw(ctex *gg.Context, c *generativeart.Canva, x float64)
 		nCircles = common.RandomRangeInt(8, 10)
 	}
 
-	r := math.Pow(rand.Float64(), 2) * 50
+	r := math.Pow(rand.Float64(), 2) * 150
 
 	var flag bool
 	if rand.Float64() < 0.7 {
@@ -87,7 +87,11 @@ func (cl *circleLoop2) draw(ctex *gg.Context, c *generativeart.Canva, x float64)
 
 	for i := 0; i < nCircles; i++ {
 		if flag {
-			ctex.DrawCircle(px*0.39, py*0.39, rand.Float64()*float64(i)*r/float64(nCircles))
+			ctex.DrawCircle(
+				px*0.39,
+				py*0.39,
+				rand.Float64()*float64(i)*r/float64(nCircles),
+			)
 		} else {
 			ctex.DrawCircle(px*0.39, py*0.39, float64(i)*r/float64(nCircles))
 		}

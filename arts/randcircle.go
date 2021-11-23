@@ -92,7 +92,7 @@ func circleSliceUpdate(cs []circle, w, h int) []circle {
 }
 
 // Generative draws a random circles image.
-func (r *randCircle) Generative(c *generativeart.Canva) {
+func (r *randCircle) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	for j := 0; j < c.Opts().NIters(); j++ {
@@ -129,4 +129,6 @@ func (r *randCircle) Generative(c *generativeart.Canva) {
 			circles = circleSliceUpdate(circles, c.Width(), c.Height())
 		}
 	}
+
+	return ""
 }

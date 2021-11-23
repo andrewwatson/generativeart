@@ -26,7 +26,7 @@ func NewSwirl(a, b, c, d, xaixs, yaixs float64) *swirl {
 }
 
 // Generative draws a swirl image.
-func (s *swirl) Generative(c *generativeart.Canva) {
+func (s *swirl) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	ctex.SetLineWidth(c.Opts().LineWidth())
 	start := point{
@@ -44,6 +44,7 @@ func (s *swirl) Generative(c *generativeart.Canva) {
 
 	s.removeNoisy(c)
 	s.removeNoisy(c)
+	return ""
 }
 
 func (s *swirl) swirlTransform(p point) point {

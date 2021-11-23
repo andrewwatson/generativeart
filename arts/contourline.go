@@ -21,7 +21,7 @@ func NewContourLine(lineNum int) *contourLine {
 }
 
 // Generative draws a contour line image.
-func (cl *contourLine) Generative(c *generativeart.Canva) {
+func (cl *contourLine) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	noise := common.NewPerlinNoise()
 	for i := 0; i < cl.lineNum; i++ {
@@ -45,4 +45,6 @@ func (cl *contourLine) Generative(c *generativeart.Canva) {
 			}
 		}
 	}
+
+	return ""
 }

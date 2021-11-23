@@ -28,10 +28,11 @@ func NewSinWaveCircles(amplitude int, wavelength float64, spacing int, depth int
 	}
 }
 
-func (swc *sinwavecircles) Generative(c *generativeart.Canva) {
+func (swc *sinwavecircles) Generative(c *generativeart.Canva) string {
 
 	ctex := gg.NewContextForRGBA(c.Img())
 	swc.recursionDraw(ctex, c, float64(c.Width()), swc.depth)
+	return ""
 }
 
 func (swc *sinwavecircles) recursionDraw(ctex *gg.Context, c *generativeart.Canva, x float64, depth int) {

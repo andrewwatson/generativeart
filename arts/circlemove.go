@@ -20,7 +20,7 @@ func NewCircleMove(circleNum int) *circleMove {
 }
 
 // Generative draws a sircle moving images.
-func (cm *circleMove) Generative(c *generativeart.Canva) {
+func (cm *circleMove) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	ctex.SetLineWidth(0.3)
 	noise := common.NewPerlinNoise()
@@ -59,4 +59,6 @@ func (cm *circleMove) Generative(c *generativeart.Canva) {
 		ctex.Stroke()
 		ctex.ClosePath()
 	}
+
+	return ""
 }

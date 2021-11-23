@@ -23,7 +23,7 @@ func NewJanus(n int, decay float64) *janus {
 
 // Generative draws a janus image
 // TODO not finished.
-func (j *janus) Generative(c *generativeart.Canva) {
+func (j *janus) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	//ctex.SetColor(c.Opts().Foreground())
 	s := 220.0
@@ -56,4 +56,6 @@ func (j *janus) Generative(c *generativeart.Canva) {
 		ctex.Fill()
 		ctex.Pop()
 	}
+
+	return ""
 }

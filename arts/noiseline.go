@@ -23,7 +23,7 @@ func NewNoiseLine(n int, elipses bool) *noiseLine {
 }
 
 // Generative draws a noise line image.
-func (nl *noiseLine) Generative(c *generativeart.Canva) {
+func (nl *noiseLine) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	noise := common.NewPerlinNoise()
 
@@ -60,4 +60,5 @@ func (nl *noiseLine) Generative(c *generativeart.Canva) {
 			t += 0.0000003
 		}
 	}
+	return ""
 }

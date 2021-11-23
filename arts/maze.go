@@ -20,7 +20,7 @@ func NewMaze(step int) *maze {
 }
 
 // Generative draws a random maze image.
-func (m *maze) Generative(c *generativeart.Canva) {
+func (m *maze) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	ctex.SetColor(c.Opts().LineColor())
 	ctex.SetLineWidth(c.Opts().LineWidth())
@@ -34,4 +34,5 @@ func (m *maze) Generative(c *generativeart.Canva) {
 			ctex.Stroke()
 		}
 	}
+	return ""
 }

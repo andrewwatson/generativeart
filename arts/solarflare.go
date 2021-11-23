@@ -19,7 +19,7 @@ func NewSolarFlare() *solarFlare {
 }
 
 // Generative draws a solar flare images.
-func (o *solarFlare) Generative(c *generativeart.Canva) {
+func (o *solarFlare) Generative(c *generativeart.Canva) string {
 	var xOffset, yOffset float64
 	var offsetInc = 0.006
 	var inc = 1.0
@@ -59,4 +59,5 @@ func (o *solarFlare) Generative(c *generativeart.Canva) {
 			r *= m
 		}
 	}
+	return ""
 }

@@ -31,7 +31,7 @@ func NewSilkSmoke(mc, msp int, minStep, maxStep, minRadius, maxRadius float64, i
 }
 
 // Generative draws a silk smoke image.
-func (s *sileSmoke) Generative(c *generativeart.Canva) {
+func (s *sileSmoke) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	cn := rand.Intn(s.maxCircle) + int(s.maxCircle/3)
@@ -75,4 +75,5 @@ func (s *sileSmoke) Generative(c *generativeart.Canva) {
 
 		circles = circleSliceUpdate(circles, c.Width(), c.Height())
 	}
+	return ""
 }

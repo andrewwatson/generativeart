@@ -23,12 +23,12 @@ func NewCircleLoop2(depth int) *circleLoop2 {
 }
 
 // Generative draws a circle composed by many colored circles.
-func (cl *circleLoop2) Generative(c *generativeart.Canva) {
+func (cl *circleLoop2) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	ctex.Translate(float64(c.Width())/2, float64(c.Height())/2)
 
 	numCircles := cl.recursionDraw(ctex, c, float64(c.Width()), cl.depth)
-	fmt.Printf("Total Circles: %d\n", numCircles)
+	return fmt.Sprintf("Circles:  %d", numCircles)
 }
 
 func (cl *circleLoop2) recursionDraw(ctex *gg.Context, c *generativeart.Canva, x float64, depth int) int {

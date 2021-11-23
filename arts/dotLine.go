@@ -25,7 +25,7 @@ func NewDotLine(n int, ras, canv float64, randColor bool) *dotLine {
 	}
 }
 
-func (d *dotLine) Generative(c *generativeart.Canva) {
+func (d *dotLine) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	ctex.SetLineWidth(c.Opts().LineWidth())
@@ -60,5 +60,5 @@ func (d *dotLine) Generative(c *generativeart.Canva) {
 			ctex.Stroke()
 		}
 	}
-
+	return ""
 }

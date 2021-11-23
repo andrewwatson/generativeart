@@ -20,7 +20,7 @@ func NewRandomShape(shapeNum int) *randomShape {
 }
 
 // Generative draws a random shape image.
-func (r *randomShape) Generative(c *generativeart.Canva) {
+func (r *randomShape) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	ctex.Translate(float64(c.Width()/2), float64(c.Height()/2))
@@ -58,4 +58,6 @@ func (r *randomShape) Generative(c *generativeart.Canva) {
 		ctex.Fill()
 		ctex.Pop()
 	}
+
+	return ""
 }

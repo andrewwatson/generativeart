@@ -22,7 +22,7 @@ func NewSilkSky(circleNum int, sunRadius float64) *silkSky {
 }
 
 // Generative draws a silk sky image.
-func (s *silkSky) Generative(c *generativeart.Canva) {
+func (s *silkSky) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	xm := float64(rand.Intn(c.Width()/5)) + float64(c.Width()*4/5-c.Width()/5)
 	ym := float64(rand.Intn(c.Height()/5)) + float64(c.Height()*4/5-c.Height()/5)
@@ -47,4 +47,5 @@ func (s *silkSky) Generative(c *generativeart.Canva) {
 			ctex.Fill()
 		}
 	}
+	return ""
 }

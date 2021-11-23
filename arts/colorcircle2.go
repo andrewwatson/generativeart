@@ -21,7 +21,7 @@ func NewColorCircle2(circleNum int) *colorCircle2 {
 }
 
 // Generative draws a color circle image.
-func (cc *colorCircle2) Generative(c *generativeart.Canva) {
+func (cc *colorCircle2) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	for i := 0; i < cc.circleNum; i++ {
@@ -39,6 +39,7 @@ func (cc *colorCircle2) Generative(c *generativeart.Canva) {
 			ctex.Fill()
 		}
 	}
+	return ""
 }
 
 func (cc *colorCircle2) circle(ctex *gg.Context, c *generativeart.Canva, x, y, d, dx float64) {

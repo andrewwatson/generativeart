@@ -15,7 +15,7 @@ import (
 )
 
 type Engine interface {
-	Generative(c *Canva)
+	Generative(c *Canva) string
 }
 
 type Canva struct {

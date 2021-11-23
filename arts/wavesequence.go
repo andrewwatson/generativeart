@@ -36,7 +36,7 @@ func NewWaveSequence(options WaveSequenceOptions) *WaveSequence {
 		startingY:     -1.0,
 	}
 }
-func (ws *WaveSequence) Generative(c *generativeart.Canva) {
+func (ws *WaveSequence) Generative(c *generativeart.Canva) string {
 
 	// baseContext := gg.NewContextForRGBA(c.Img())
 
@@ -76,4 +76,5 @@ func (ws *WaveSequence) Generative(c *generativeart.Canva) {
 
 		c.AddFrame(newFrame)
 	}
+	return ""
 }

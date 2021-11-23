@@ -23,7 +23,7 @@ func NewCircleGrid(circleNumMin, circleNumMax int) *circleGrid {
 }
 
 // Generative draws a circle grid image.
-func (cg *circleGrid) Generative(c *generativeart.Canva) {
+func (cg *circleGrid) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	cg.grid(ctex, c)
 	ctex.Translate(float64(c.Width())/2, float64(c.Height())/2)
@@ -43,6 +43,7 @@ func (cg *circleGrid) Generative(c *generativeart.Canva) {
 			cg.draw(ctex, c, x, y, w/2*common.RandomRangeFloat64(0.6, 0.95))
 		}
 	}
+	return ""
 }
 
 func (cg *circleGrid) draw(ctex *gg.Context, c *generativeart.Canva, x, y, r float64) {

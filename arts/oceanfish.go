@@ -23,7 +23,7 @@ func NewOceanFish(lineNum, fishNum int) *oceanFish {
 }
 
 // Generative draws a ocean and fish images.
-func (o *oceanFish) Generative(c *generativeart.Canva) {
+func (o *oceanFish) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	o.drawlines(ctex, c)
@@ -46,6 +46,7 @@ func (o *oceanFish) Generative(c *generativeart.Canva) {
 		ctex.ClearPath()
 		ctex.ResetClip()
 	}
+	return ""
 }
 
 func (o *oceanFish) drawlines(ctx *gg.Context, c *generativeart.Canva) {

@@ -17,7 +17,7 @@ func NewColorCanve(seg float64) *colorCanva {
 }
 
 // Generative returns a color canva image.
-func (cc *colorCanva) Generative(c *generativeart.Canva) {
+func (cc *colorCanva) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	ctex.SetLineWidth(c.Opts().LineWidth())
 
@@ -43,6 +43,8 @@ func (cc *colorCanva) Generative(c *generativeart.Canva) {
 		cc.draw(c, ctex, rects[i])
 		cc.draw(c, ctex, rects[i])
 	}
+
+	return ""
 }
 
 func (cc *colorCanva) draw(c *generativeart.Canva, ctex *gg.Context, rect *common.Rect) {

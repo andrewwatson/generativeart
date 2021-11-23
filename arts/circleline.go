@@ -32,7 +32,7 @@ func NewCircleLine(step float64, lineNum int, radius, xaixs, yaixs float64) *cir
 }
 
 // Generative draws a cirle line image.
-func (cl *circleLine) Generative(c *generativeart.Canva) {
+func (cl *circleLine) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	ctex.SetLineWidth(c.Opts().LineWidth())
 	ctex.SetColor(c.Opts().LineColor())
@@ -55,4 +55,6 @@ func (cl *circleLine) Generative(c *generativeart.Canva) {
 		ctex.LineTo(p2.x, p2.y)
 		ctex.Stroke()
 	}
+
+	return ""
 }

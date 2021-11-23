@@ -20,7 +20,7 @@ func NewPointRibbon(r float64) *pointRibbon {
 
 // Generative draws a point ribbon image.
 // TODO: make the point as parameters.
-func (s *pointRibbon) Generative(c *generativeart.Canva) {
+func (s *pointRibbon) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	ctex.SetLineWidth(c.Opts().LineWidth())
 
@@ -35,4 +35,5 @@ func (s *pointRibbon) Generative(c *generativeart.Canva) {
 		t += 0.01
 		dt += 0.1
 	}
+	return ""
 }

@@ -25,7 +25,7 @@ func NewJulia(formula GenFunc, maxz, xaixs, yaixs float64) *julia {
 }
 
 // Generative draws a julia set.
-func (j *julia) Generative(c *generativeart.Canva) {
+func (j *julia) Generative(c *generativeart.Canva) string {
 	n := len(c.Opts().ColorSchema())
 	if n > 255 {
 		n = 255
@@ -44,4 +44,5 @@ func (j *julia) Generative(c *generativeart.Canva) {
 			c.Img().Set(i, k, c.Opts().ColorSchema()[idx])
 		}
 	}
+	return ""
 }

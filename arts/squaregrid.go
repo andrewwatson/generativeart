@@ -22,7 +22,7 @@ func NewGirdSquares(step, rectSize int, decay float64) *girdSquares {
 }
 
 // Generative draws a grid squares image.
-func (g *girdSquares) Generative(c *generativeart.Canva) {
+func (g *girdSquares) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	for x := 0; x < c.Width(); x += g.step {
@@ -58,4 +58,5 @@ func (g *girdSquares) Generative(c *generativeart.Canva) {
 			}
 		}
 	}
+	return ""
 }

@@ -23,7 +23,7 @@ func NewPixelHole(dotN int) *pixelHole {
 }
 
 // Generative draws a pixel hole images.
-func (p *pixelHole) Generative(c *generativeart.Canva) {
+func (p *pixelHole) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	for i := 0.0; i < float64(c.Opts().NIters()); i += 1.0 {
 		ctex.Push()
@@ -31,6 +31,7 @@ func (p *pixelHole) Generative(c *generativeart.Canva) {
 		p.draw(ctex, c, i)
 		ctex.Pop()
 	}
+	return ""
 }
 
 func (p *pixelHole) draw(ctex *gg.Context, c *generativeart.Canva, frameCount float64) {

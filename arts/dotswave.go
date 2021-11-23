@@ -21,7 +21,7 @@ func NewDotsWave(dotsN int) *dotsWave {
 }
 
 // Generative draws a dots wave images.
-func (d *dotsWave) Generative(c *generativeart.Canva) {
+func (d *dotsWave) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	noise := common.NewPerlinNoise()
 	for i := 0; i < d.dotsN; i++ {
@@ -47,4 +47,5 @@ func (d *dotsWave) Generative(c *generativeart.Canva) {
 		}
 		ctex.Pop()
 	}
+	return ""
 }

@@ -18,7 +18,7 @@ func NewCircleLoop(radius float64) *circleLoop {
 }
 
 // Generative draws a Circle Loop images.
-func (cl *circleLoop) Generative(c *generativeart.Canva) {
+func (cl *circleLoop) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	r := cl.radius
@@ -38,4 +38,6 @@ func (cl *circleLoop) Generative(c *generativeart.Canva) {
 		r += math.Cos((theta))*math.Sin((theta/2)) + math.Sin((theta))*math.Cos((theta/2))
 		theta += math.Pi / 2
 	}
+
+	return ""
 }

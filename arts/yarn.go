@@ -18,7 +18,7 @@ func NewYarn(n int) *yarn {
 }
 
 // Generative draws a yarn image.
-func (y *yarn) Generative(c *generativeart.Canva) {
+func (y *yarn) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	ctex.SetLineWidth(c.Opts().LineWidth())
 	ctex.SetColor(c.Opts().LineColor())
@@ -41,4 +41,6 @@ func (y *yarn) Generative(c *generativeart.Canva) {
 		ctex.ClearPath()
 		offset += inc
 	}
+
+	return ""
 }

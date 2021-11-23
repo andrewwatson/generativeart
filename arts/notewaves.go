@@ -52,7 +52,7 @@ func NewNoteWave(startingY float64, noteName string, minRadius, maxRadius float6
 	}
 
 }
-func (nw *notewave) Generative(c *generativeart.Canva) {
+func (nw *notewave) Generative(c *generativeart.Canva) string {
 
 	wavelength, err := nw.GetWavelength(nw.noteName)
 	if err != nil {
@@ -87,6 +87,7 @@ func (nw *notewave) Generative(c *generativeart.Canva) {
 		// ctex.DrawEllipse(i, nw.startingY+(amplitude))
 		ctex.Stroke()
 	}
+	return ""
 }
 
 func (nw *notewave) GetWavelength(noteName string) (float64, error) {

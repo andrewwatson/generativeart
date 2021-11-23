@@ -31,7 +31,7 @@ func NewPerlinPerls(circleN, dotsN, colorMin, colorMax int) *perlinPearls {
 }
 
 // Generative draws a circle with perlin noise.
-func (pp *perlinPearls) Generative(c *generativeart.Canva) {
+func (pp *perlinPearls) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 	ctex.SetLineWidth(0.5)
 	ctex.SetColor(common.Black)
@@ -121,4 +121,6 @@ func (pp *perlinPearls) Generative(c *generativeart.Canva) {
 			}
 		}
 	}
+
+	return ""
 }

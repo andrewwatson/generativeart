@@ -25,7 +25,7 @@ func NewSpiralSquare(squareNum int, rectSide, decay float64, randColor bool) *sp
 }
 
 // Generative draws a spiral square images.
-func (s *spiralSquare) Generative(c *generativeart.Canva) {
+func (s *spiralSquare) Generative(c *generativeart.Canva) string {
 	ctex := gg.NewContextForRGBA(c.Img())
 
 	sl := s.rectSide
@@ -60,4 +60,6 @@ func (s *spiralSquare) Generative(c *generativeart.Canva) {
 			return
 		}
 	}
+
+	return ""
 }

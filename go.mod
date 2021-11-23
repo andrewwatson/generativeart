@@ -3,6 +3,7 @@ module github.com/andrewwatson/generativeart
 go 1.16
 
 require (
+	github.com/andybons/gogif v0.0.0-20140526152223-16d573594812
 	github.com/aquilax/go-perlin v1.0.0
 	github.com/fogleman/gg v1.3.0
 	github.com/llgcode/draw2d v0.0.0-20200930101115-bfaf5d914d1e

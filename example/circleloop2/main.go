@@ -18,10 +18,10 @@ func main() {
 		{0x66, 0x2E, 0x9B, 0xFF},
 		{0x43, 0xBC, 0xCD, 0xFF},
 	}
-	c := generativeart.NewCanva(1500, 1500)
+	c := generativeart.NewCanva(3000, 3000)
 	c.SetBackground(color.RGBA{8, 10, 20, 255})
 	c.FillBackground()
 	c.SetColorSchema(colors)
-	c.Draw(arts.NewCircleLoop2(14))
+	c.Draw(arts.NewCircleLoop2(8))
 	c.ToPNG("colorloop2.png")
 }

@@ -51,7 +51,7 @@ func (cl *circleLoop2) draw(ctex *gg.Context, c *generativeart.Canva, x float64)
 	if odds < 0.8 {
 		lw = 2
 	} else if odds > 0.95 {
-		lw = 5
+		lw = 9
 	} else {
 		lw = common.RandomRangeFloat64(2.0, common.RandomRangeFloat64(1, 6))
 	}
@@ -73,9 +73,9 @@ func (cl *circleLoop2) draw(ctex *gg.Context, c *generativeart.Canva, x float64)
 
 	cls := c.Opts().ColorSchema()[rand.Intn(len(c.Opts().ColorSchema()))]
 	ctex.SetColor(cls)
-	nCircles := common.RandomRangeInt(1, 6)
-	if rand.Float64() < 0.03 {
-		nCircles = common.RandomRangeInt(8, 10)
+	nCircles := common.RandomRangeInt(1, 4)
+	if rand.Float64() < 0.05 {
+		nCircles = common.RandomRangeInt(10, 20)
 	}
 
 	r := math.Pow(rand.Float64(), 2) * 150
@@ -85,15 +85,33 @@ func (cl *circleLoop2) draw(ctex *gg.Context, c *generativeart.Canva, x float64)
 		flag = true
 	}
 
+	drawSquare := false
+	if rand.Float64() < 0.005 {
+		drawSquare = true
+	}
+
 	for i := 0; i < nCircles; i++ {
 		if flag {
-			ctex.DrawCircle(
-				px*0.39,
-				py*0.39,
-				rand.Float64()*float64(i)*r/float64(nCircles),
-			)
+			if drawSquare {
+				length := rand.Float64() * float64(i) * r / float64(nCircles)
+				ctex.DrawRectangle(px*0.65, px*0.65, length, length)
+
+			} else {
+				ctex.DrawCircle(
+					px*0.39,
+					py*0.39,
+					rand.Float64()*float64(i)*r/float64(nCircles),
+				)
+
+			}
 		} else {
-			ctex.DrawCircle(px*0.39, py*0.39, float64(i)*r/float64(nCircles))
+			if drawSquare {
+				length := float64(i) * r / float64(nCircles)
+				ctex.DrawRectangle(px*0.65, px*0.65, length, length)
+			} else {
+				ctex.DrawCircle(px*0.39, py*0.39, float64(i)*r/float64(nCircles))
+			}
+
 		}
 		ctex.Stroke()
 	}
